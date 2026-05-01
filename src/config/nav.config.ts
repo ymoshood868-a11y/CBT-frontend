@@ -146,15 +146,134 @@ export const navConfig: Record<string, NavItem[]> = {
     },
   ],
   school_admin: [
-    { label: 'Dashboard', path: '/admin/dashboard', icon: LayoutDashboard },
-    { label: 'Teachers', path: '/admin/teachers', icon: Users },
-    { label: 'Students', path: '/admin/students', icon: GraduationCap },
-    { label: 'Classes', path: '/admin/classes', icon: BookMarked },
-    { label: 'Subjects', path: '/admin/subjects', icon: BookOpen },
-    { label: 'Exams', path: '/admin/exams', icon: FileText },
-    { label: 'Approvals', path: '/admin/approvals', icon: ClipboardList },
-    { label: 'Results', path: '/admin/results', icon: TrendingUp },
-    { label: 'Settings', path: '/admin/settings', icon: Settings },
+    { 
+      label: 'Dashboard', 
+      path: '/admin/dashboard', 
+      icon: LayoutDashboard 
+    },
+    { 
+      label: 'Overview', 
+      icon: Activity,
+      children: [
+        { label: 'Exam Statistics', path: '/admin/overview/statistics', icon: BarChart3 },
+        { label: 'Recent Activities', path: '/admin/overview/activities', icon: Clock },
+        { label: 'Performance Summary', path: '/admin/overview/performance', icon: TrendingUp },
+        { label: 'Quick Actions', path: '/admin/overview/actions', icon: Settings },
+      ]
+    },
+    { 
+      label: 'Student Management', 
+      icon: GraduationCap,
+      children: [
+        { label: 'All Students', path: '/admin/students', icon: GraduationCap },
+        { label: 'Register Student', path: '/admin/students/register', icon: GraduationCap },
+        { label: 'Bulk Import', path: '/admin/students/import', icon: Upload },
+        { label: 'Student Performance', path: '/admin/students/performance', icon: TrendingUp },
+        { label: 'Suspended Students', path: '/admin/students/suspended', icon: Ban },
+        { label: 'Attendance', path: '/admin/students/attendance', icon: CheckCircle },
+        { label: 'Student Profiles', path: '/admin/students/profiles', icon: Users },
+      ]
+    },
+    { 
+      label: 'Teacher Management', 
+      icon: BookOpen,
+      children: [
+        { label: 'All Teachers', path: '/admin/teachers', icon: BookOpen },
+        { label: 'Add Teacher', path: '/admin/teachers/add', icon: BookOpen },
+        { label: 'Assign Subjects', path: '/admin/teachers/subjects', icon: BookMarked },
+        { label: 'Teacher Performance', path: '/admin/teachers/performance', icon: TrendingUp },
+        { label: 'Teacher Schedules', path: '/admin/teachers/schedules', icon: Clock },
+        { label: 'Activity Logs', path: '/admin/teachers/logs', icon: ScrollText },
+      ]
+    },
+    { 
+      label: 'Exam Management', 
+      icon: FileText,
+      children: [
+        { label: 'Create Exam', path: '/admin/exams/create', icon: FileText },
+        { label: 'All Exams', path: '/admin/exams', icon: FileText },
+        { label: 'Scheduled Exams', path: '/admin/exams/scheduled', icon: Clock },
+        { label: 'Active Exams', path: '/admin/exams/active', icon: Play },
+        { label: 'Draft Exams', path: '/admin/exams/drafts', icon: FileText },
+        { label: 'Archived Exams', path: '/admin/exams/archived', icon: Archive },
+        { label: 'Exam Instructions', path: '/admin/exams/instructions', icon: ScrollText },
+        { label: 'Exam Policies', path: '/admin/exams/policies', icon: Shield },
+      ]
+    },
+    { 
+      label: 'Question Bank', 
+      icon: FileQuestion,
+      children: [
+        { label: 'All Questions', path: '/admin/questions', icon: FileQuestion },
+        { label: 'Add Questions', path: '/admin/questions/add', icon: FileQuestion },
+        { label: 'Categories', path: '/admin/questions/categories', icon: List },
+        { label: 'Import Questions', path: '/admin/questions/import', icon: Upload },
+        { label: 'Export Questions', path: '/admin/questions/export', icon: Download },
+        { label: 'Difficulty Levels', path: '/admin/questions/difficulty', icon: TrendingUp },
+        { label: 'Question Review', path: '/admin/questions/review', icon: Eye },
+      ]
+    },
+    { 
+      label: 'Live Monitoring', 
+      icon: Eye,
+      children: [
+        { label: 'Live Candidates', path: '/admin/monitoring/live', icon: Users },
+        { label: 'Active Sessions', path: '/admin/monitoring/sessions', icon: Activity },
+        { label: 'Tab Switch Detection', path: '/admin/monitoring/tab-switches', icon: AlertTriangle },
+        { label: 'Suspicious Activities', path: '/admin/monitoring/suspicious', icon: Flag },
+        { label: 'Pause Candidate', path: '/admin/monitoring/pause', icon: Pause },
+        { label: 'Force Submit', path: '/admin/monitoring/force-submit', icon: Ban },
+        { label: 'Monitoring Logs', path: '/admin/monitoring/logs', icon: ScrollText },
+      ]
+    },
+    { 
+      label: 'Results Management', 
+      icon: TrendingUp,
+      children: [
+        { label: 'View Results', path: '/admin/results', icon: TrendingUp },
+        { label: 'Approve Results', path: '/admin/results/approve', icon: CheckCircle },
+        { label: 'Publish Results', path: '/admin/results/publish', icon: Upload },
+        { label: 'Result Analytics', path: '/admin/results/analytics', icon: BarChart3 },
+        { label: 'Pass/Fail Reports', path: '/admin/results/reports', icon: FileText },
+        { label: 'Leaderboards', path: '/admin/results/leaderboards', icon: Trophy },
+        { label: 'Export Results', path: '/admin/results/export', icon: Download },
+      ]
+    },
+    { 
+      label: 'Invigilator Management', 
+      icon: Eye,
+      children: [
+        { label: 'All Invigilators', path: '/admin/invigilators', icon: Eye },
+        { label: 'Assign Invigilators', path: '/admin/invigilators/assign', icon: UserCog },
+        { label: 'Exam Hall Monitoring', path: '/admin/invigilators/monitoring', icon: Activity },
+        { label: 'Invigilator Reports', path: '/admin/invigilators/reports', icon: FileText },
+        { label: 'Attendance Tracking', path: '/admin/invigilators/attendance', icon: CheckCircle },
+      ]
+    },
+    { 
+      label: 'Reports & Analytics', 
+      icon: BarChart3,
+      children: [
+        { label: 'Student Reports', path: '/admin/reports/students', icon: GraduationCap },
+        { label: 'Exam Reports', path: '/admin/reports/exams', icon: FileText },
+        { label: 'Performance Charts', path: '/admin/reports/performance', icon: PieChart },
+        { label: 'Attendance Reports', path: '/admin/reports/attendance', icon: CheckCircle },
+        { label: 'Generate PDF', path: '/admin/reports/pdf', icon: FileText },
+        { label: 'Export CSV', path: '/admin/reports/csv', icon: Download },
+      ]
+    },
+    { 
+      label: 'Settings', 
+      icon: Settings,
+      children: [
+        { label: 'Institution Settings', path: '/admin/settings/institution', icon: Building2 },
+        { label: 'Exam Settings', path: '/admin/settings/exams', icon: FileText },
+        { label: 'Notification Settings', path: '/admin/settings/notifications', icon: Bell },
+        { label: 'Branding', path: '/admin/settings/branding', icon: Globe },
+        { label: 'User Permissions', path: '/admin/settings/permissions', icon: Lock },
+        { label: 'Security Settings', path: '/admin/settings/security', icon: ShieldAlert },
+      ]
+    },
   ],
   teacher: [
     { label: 'Dashboard', path: '/teacher/dashboard', icon: LayoutDashboard },
