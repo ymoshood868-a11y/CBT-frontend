@@ -25,6 +25,16 @@ import QuestionBank from "@/pages/teacher/QuestionBank";
 import TeacherExams from "@/pages/teacher/TeacherExams";
 import TeacherResults from "@/pages/teacher/TeacherResults";
 import CreateExam from "@/pages/teacher/CreateExam";
+import AddQuestion from "@/pages/teacher/AddQuestion";
+import QuestionCategories from "@/pages/teacher/QuestionCategories";
+import ImportQuestions from "@/pages/teacher/ImportQuestions";
+import DraftExams from "@/pages/teacher/DraftExams";
+import TeacherActiveExams from "@/pages/teacher/ActiveExams";
+import GradeExams from "@/pages/teacher/GradeExams";
+import ResultsAnalytics from "@/pages/teacher/ResultsAnalytics";
+import MyStudents from "@/pages/teacher/MyStudents";
+import StudentPerformance from "@/pages/teacher/StudentPerformance";
+import StudentAttendance from "@/pages/teacher/StudentAttendance";
 
 // Admin Pages
 import AdminDashboard from "@/pages/admin/AdminDashboard";
@@ -37,6 +47,10 @@ import SystemLogs from "@/pages/admin/SystemLogs";
 // Invigilator Pages
 import { InvigilatorDashboard } from "@/pages/invigilator/InvigilatorDashboard";
 import MonitorExam from "@/pages/invigilator/MonitorExam";
+import InvigilatorActiveExams from "@/pages/invigilator/ActiveExams";
+import InvigilatorSuspiciousActivities from "@/pages/invigilator/SuspiciousActivities";
+import InvigilatorReports from "@/pages/invigilator/Reports";
+import IncidentReports from "@/pages/invigilator/IncidentReports";
 
 // Super Admin Pages
 import SuperDashboard from "@/pages/super-admin/SuperDashboard";
@@ -195,9 +209,19 @@ export const router = createBrowserRouter([
     children: [
       { path: "dashboard", element: <TeacherDashboard /> },
       { path: "questions", element: <QuestionBank /> },
+      { path: "questions/add", element: <AddQuestion /> },
+      { path: "questions/categories", element: <QuestionCategories /> },
+      { path: "questions/import", element: <ImportQuestions /> },
       { path: "exams", element: <TeacherExams /> },
       { path: "exams/create", element: <CreateExam /> },
+      { path: "exams/drafts", element: <DraftExams /> },
+      { path: "exams/active", element: <TeacherActiveExams /> },
       { path: "results", element: <TeacherResults /> },
+      { path: "results/grade", element: <GradeExams /> },
+      { path: "results/analytics", element: <ResultsAnalytics /> },
+      { path: "students", element: <MyStudents /> },
+      { path: "students/performance", element: <StudentPerformance /> },
+      { path: "students/attendance", element: <StudentAttendance /> },
       { index: true, element: <Navigate to="/teacher/dashboard" replace /> },
     ],
   },
@@ -214,6 +238,10 @@ export const router = createBrowserRouter([
       { path: "dashboard", element: <InvigilatorDashboard /> },
       { path: "monitor", element: <InvigilatorDashboard /> },
       { path: "monitor/:examId", element: <MonitorExam /> },
+      { path: "exams/active", element: <InvigilatorActiveExams /> },
+      { path: "suspicious", element: <InvigilatorSuspiciousActivities /> },
+      { path: "reports", element: <InvigilatorReports /> },
+      { path: "reports/incidents", element: <IncidentReports /> },
       { path: "retakes", element: <InvigilatorDashboard /> },
       {
         index: true,
