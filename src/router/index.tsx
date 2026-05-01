@@ -41,11 +41,37 @@ import MonitorExam from "@/pages/invigilator/MonitorExam";
 // Super Admin Pages
 import SuperDashboard from "@/pages/super-admin/SuperDashboard";
 import SchoolManagement from "@/pages/super-admin/SchoolManagement";
+import SchoolCreate from "@/pages/super-admin/SchoolCreate";
 import SystemConfiguration from "@/pages/super-admin/SystemConfiguration";
 import BillingManagement from "@/pages/super-admin/BillingManagement";
 import PlatformAnalytics from "@/pages/super-admin/PlatformAnalytics";
 import SuperAuditLogs from "@/pages/super-admin/SuperAuditLogs";
 import BackupRestore from "@/pages/super-admin/BackupRestore";
+import AllUsers from "@/pages/super-admin/AllUsers";
+import Students from "@/pages/super-admin/Students";
+import Teachers from "@/pages/super-admin/Teachers";
+import Invigilators from "@/pages/super-admin/Invigilators";
+import Admins from "@/pages/super-admin/Admins";
+import AllExams from "@/pages/super-admin/AllExams";
+import ActiveExams from "@/pages/super-admin/ActiveExams";
+import ScheduledExams from "@/pages/super-admin/ScheduledExams";
+import ArchivedExams from "@/pages/super-admin/ArchivedExams";
+import LiveMonitoring from "@/pages/super-admin/LiveMonitoring";
+import SuspiciousActivities from "@/pages/super-admin/SuspiciousActivities";
+import TabSwitches from "@/pages/super-admin/TabSwitches";
+import ExamLogs from "@/pages/super-admin/ExamLogs";
+import AllQuestions from "@/pages/super-admin/AllQuestions";
+import QuestionCategories from "@/pages/super-admin/QuestionCategories";
+import AIQuestionGenerator from "@/pages/super-admin/AIQuestionGenerator";
+import ImportExportQuestions from "@/pages/super-admin/ImportExportQuestions";
+import GlobalResults from "@/pages/super-admin/GlobalResults";
+import Leaderboards from "@/pages/super-admin/Leaderboards";
+import Reports from "@/pages/super-admin/Reports";
+import PaymentHistory from "@/pages/super-admin/PaymentHistory";
+import Revenue from "@/pages/super-admin/Revenue";
+import Invoices from "@/pages/super-admin/Invoices";
+import Security from "@/pages/super-admin/Security";
+import Notifications from "@/pages/super-admin/Notifications";
 
 // Exam Engine
 import { ExamEngine } from "@/features/exams/ExamEngine";
@@ -81,12 +107,55 @@ export const router = createBrowserRouter([
     ),
     children: [
       { path: "dashboard", element: <SuperDashboard /> },
+
+      // Organizations
       { path: "schools", element: <SchoolManagement /> },
-      { path: "configuration", element: <SystemConfiguration /> },
-      { path: "billing", element: <BillingManagement /> },
+      { path: "schools/create", element: <SchoolCreate /> },
+
+      // Users
+      { path: "users", element: <AllUsers /> },
+      { path: "users/students", element: <Students /> },
+      { path: "users/teachers", element: <Teachers /> },
+      { path: "users/invigilators", element: <Invigilators /> },
+      { path: "users/admins", element: <Admins /> },
+
+      // Exams
+      { path: "exams", element: <AllExams /> },
+      { path: "exams/active", element: <ActiveExams /> },
+      { path: "exams/scheduled", element: <ScheduledExams /> },
+      { path: "exams/archived", element: <ArchivedExams /> },
+
+      // Monitoring
+      { path: "monitoring/live", element: <LiveMonitoring /> },
+      { path: "monitoring/suspicious", element: <SuspiciousActivities /> },
+      { path: "monitoring/tab-switches", element: <TabSwitches /> },
+      { path: "monitoring/logs", element: <ExamLogs /> },
+
+      // Questions
+      { path: "questions", element: <AllQuestions /> },
+      { path: "questions/categories", element: <QuestionCategories /> },
+      { path: "questions/ai-generator", element: <AIQuestionGenerator /> },
+      { path: "questions/import-export", element: <ImportExportQuestions /> },
+
+      // Results & Analytics
       { path: "analytics", element: <PlatformAnalytics /> },
+      { path: "results", element: <GlobalResults /> },
+      { path: "results/leaderboards", element: <Leaderboards /> },
+      { path: "results/reports", element: <Reports /> },
+
+      // Billing
+      { path: "billing", element: <BillingManagement /> },
+      { path: "billing/payments", element: <PaymentHistory /> },
+      { path: "billing/revenue", element: <Revenue /> },
+      { path: "billing/invoices", element: <Invoices /> },
+
+      // System
+      { path: "configuration", element: <SystemConfiguration /> },
       { path: "audit-logs", element: <SuperAuditLogs /> },
       { path: "backup", element: <BackupRestore /> },
+      { path: "system/security", element: <Security /> },
+      { path: "system/notifications", element: <Notifications /> },
+
       {
         index: true,
         element: <Navigate to="/super-admin/dashboard" replace />,
