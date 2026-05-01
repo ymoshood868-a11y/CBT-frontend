@@ -26,8 +26,8 @@ import TeacherExams from "@/pages/teacher/TeacherExams";
 import TeacherResults from "@/pages/teacher/TeacherResults";
 import CreateExam from "@/pages/teacher/CreateExam";
 import AddQuestion from "@/pages/teacher/AddQuestion";
-import QuestionCategories from "@/pages/teacher/QuestionCategories";
-import ImportQuestions from "@/pages/teacher/ImportQuestions";
+import TeacherQuestionCategories from "@/pages/teacher/QuestionCategories";
+import TeacherImportQuestions from "@/pages/teacher/ImportQuestions";
 import DraftExams from "@/pages/teacher/DraftExams";
 import TeacherActiveExams from "@/pages/teacher/ActiveExams";
 import GradeExams from "@/pages/teacher/GradeExams";
@@ -75,7 +75,7 @@ import SuspiciousActivities from "@/pages/super-admin/SuspiciousActivities";
 import TabSwitches from "@/pages/super-admin/TabSwitches";
 import ExamLogs from "@/pages/super-admin/ExamLogs";
 import AllQuestions from "@/pages/super-admin/AllQuestions";
-import QuestionCategories from "@/pages/super-admin/QuestionCategories";
+import SuperAdminQuestionCategories from "@/pages/super-admin/QuestionCategories";
 import AIQuestionGenerator from "@/pages/super-admin/AIQuestionGenerator";
 import ImportExportQuestions from "@/pages/super-admin/ImportExportQuestions";
 import GlobalResults from "@/pages/super-admin/GlobalResults";
@@ -147,7 +147,10 @@ export const router = createBrowserRouter([
 
       // Questions
       { path: "questions", element: <AllQuestions /> },
-      { path: "questions/categories", element: <QuestionCategories /> },
+      {
+        path: "questions/categories",
+        element: <SuperAdminQuestionCategories />,
+      },
       { path: "questions/ai-generator", element: <AIQuestionGenerator /> },
       { path: "questions/import-export", element: <ImportExportQuestions /> },
 
@@ -210,8 +213,8 @@ export const router = createBrowserRouter([
       { path: "dashboard", element: <TeacherDashboard /> },
       { path: "questions", element: <QuestionBank /> },
       { path: "questions/add", element: <AddQuestion /> },
-      { path: "questions/categories", element: <QuestionCategories /> },
-      { path: "questions/import", element: <ImportQuestions /> },
+      { path: "questions/categories", element: <TeacherQuestionCategories /> },
+      { path: "questions/import", element: <TeacherImportQuestions /> },
       { path: "exams", element: <TeacherExams /> },
       { path: "exams/create", element: <CreateExam /> },
       { path: "exams/drafts", element: <DraftExams /> },
