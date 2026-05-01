@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 import { useAuthStore } from "@/stores/auth.store";
 
 // UI / layout components
-import { AppSidebar } from "@/components/layouts/AppSidebar";
+import { AppSidebarNew } from "@/components/layouts/AppSidebarNew";
 import { AppTopbar } from "@/components/layouts/AppTopbar";
 
 // auth gate
@@ -44,7 +44,7 @@ export function DashboardLayout() {
       )}
 
       {/* Sidebar */}
-      <AppSidebar />
+      <AppSidebarNew />
 
       {/* Main content */}
       <div
