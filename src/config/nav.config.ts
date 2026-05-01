@@ -276,18 +276,95 @@ export const navConfig: Record<string, NavItem[]> = {
     },
   ],
   teacher: [
-    { label: 'Dashboard', path: '/teacher/dashboard', icon: LayoutDashboard },
-    { label: 'Question Banks', path: '/teacher/questions', icon: BookOpen },
-    { label: 'My Exams', path: '/teacher/exams', icon: FileText },
-    { label: 'Results', path: '/teacher/results', icon: BarChart3 },
+    { 
+      label: 'Dashboard', 
+      path: '/teacher/dashboard', 
+      icon: LayoutDashboard 
+    },
+    { 
+      label: 'Question Bank', 
+      icon: FileQuestion,
+      children: [
+        { label: 'All Questions', path: '/teacher/questions', icon: FileQuestion },
+        { label: 'Add Question', path: '/teacher/questions/add', icon: FileQuestion },
+        { label: 'Categories', path: '/teacher/questions/categories', icon: List },
+        { label: 'Import Questions', path: '/teacher/questions/import', icon: Upload },
+      ]
+    },
+    { 
+      label: 'Exams', 
+      icon: FileText,
+      children: [
+        { label: 'Create Exam', path: '/teacher/exams/create', icon: FileText },
+        { label: 'My Exams', path: '/teacher/exams', icon: FileText },
+        { label: 'Draft Exams', path: '/teacher/exams/drafts', icon: FileText },
+        { label: 'Active Exams', path: '/teacher/exams/active', icon: Play },
+      ]
+    },
+    { 
+      label: 'Results', 
+      icon: BarChart3,
+      children: [
+        { label: 'View Results', path: '/teacher/results', icon: TrendingUp },
+        { label: 'Grade Exams', path: '/teacher/results/grade', icon: CheckCircle },
+        { label: 'Analytics', path: '/teacher/results/analytics', icon: BarChart3 },
+      ]
+    },
+    { 
+      label: 'Students', 
+      icon: GraduationCap,
+      children: [
+        { label: 'My Students', path: '/teacher/students', icon: GraduationCap },
+        { label: 'Performance', path: '/teacher/students/performance', icon: TrendingUp },
+        { label: 'Attendance', path: '/teacher/students/attendance', icon: CheckCircle },
+      ]
+    },
   ],
   invigilator: [
-    { label: 'Dashboard', path: '/invigilator/dashboard', icon: LayoutDashboard },
-    { label: 'Exam Rooms', path: '/invigilator/rooms', icon: Eye },
+    { 
+      label: 'Dashboard', 
+      path: '/invigilator/dashboard', 
+      icon: LayoutDashboard 
+    },
+    { 
+      label: 'Live Monitoring', 
+      icon: Eye,
+      children: [
+        { label: 'Active Exams', path: '/invigilator/exams/active', icon: Play },
+        { label: 'Monitor Candidates', path: '/invigilator/monitor', icon: Users },
+        { label: 'Suspicious Activities', path: '/invigilator/suspicious', icon: Flag },
+      ]
+    },
+    { 
+      label: 'Reports', 
+      icon: FileText,
+      children: [
+        { label: 'Exam Reports', path: '/invigilator/reports', icon: FileText },
+        { label: 'Incident Reports', path: '/invigilator/reports/incidents', icon: AlertTriangle },
+      ]
+    },
   ],
   student: [
-    { label: 'Dashboard', path: '/student/dashboard', icon: LayoutDashboard },
-    { label: 'Results', path: '/student/results', icon: BarChart3 },
+    { 
+      label: 'Dashboard', 
+      path: '/student/dashboard', 
+      icon: LayoutDashboard 
+    },
+    { 
+      label: 'My Exams', 
+      path: '/student/exams', 
+      icon: FileText 
+    },
+    { 
+      label: 'Results', 
+      path: '/student/results', 
+      icon: BarChart3 
+    },
+    { 
+      label: 'Profile', 
+      path: '/student/profile', 
+      icon: Users 
+    },
   ],
 }
 

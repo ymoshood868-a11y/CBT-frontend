@@ -39,7 +39,12 @@ export function AppSidebarNew() {
       return (
         <div key={item.label} style={{ marginBottom: 4 }}>
           <button
-            onClick={() => toggleDropdown(item.label)}
+            onClick={(e) => {
+              e.preventDefault();
+              console.log("Toggling:", item.label, "Current state:", isOpen);
+              toggleDropdown(item.label);
+            }}
+            type="button"
             style={{
               width: "100%",
               display: "flex",
@@ -98,9 +103,9 @@ export function AppSidebarNew() {
             )}
           </button>
 
-          {isOpen && (
-            <div style={{ marginTop: 4 }}>
-              {item.children?.map((child) => renderNavItem(child, true))}
+          {isOpen && item.children && (
+            <div style={{ marginTop: 4, marginLeft: 0 }}>
+              {item.children.map((child) => renderNavItem(child, true))}
             </div>
           )}
         </div>
